@@ -1,0 +1,11 @@
+.form-control
+{
+    height:28px;
+    font-size:12px;
+    padding:2px 2px;
+    border-radius:0px;
+}
+.form-group
+{
+    margin-bottom:5px;
+}

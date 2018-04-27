@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="Collaborazioni" EntityType="DBModel.Store.Collaborazioni" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Comuni" EntityType="DBModel.Store.Comuni" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Foto" EntityType="DBModel.Store.Foto" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Immobili" EntityType="DBModel.Store.Immobili" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Provincie" EntityType="DBModel.Store.Provincie" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Regioni" EntityType="DBModel.Store.Regioni" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+  </EntityContainer>
+  <EntityType Name="Collaborazioni">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Path" Type="nvarchar(max)" />
+    <Property Name="Descrizione" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Comuni">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Comune" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Provincia" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Foto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descrizione" Type="nvarchar(max)" />
+    <Property Name="Path" Type="nvarchar(max)" />
+    <Property Name="CodiceImmobile" Type="nvarchar(max)" />
+    <Property Name="Copertina" Type="int" />
+  </EntityType>
+  <EntityType Name="Immobili">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Codice" Type="nvarchar(max)" />
+    <Property Name="Prezzo" Type="bigint" />
+    <Property Name="Tipologia" Type="nvarchar(max)" />
+    <Property Name="Stato" Type="nvarchar(max)" />
+    <Property Name="Provincia" Type="nvarchar(max)" />
+    <Property Name="Comune" Type="nvarchar(max)" />
+    <Property Name="Zona" Type="nvarchar(max)" />
+    <Property Name="Mq" Type="int" />
+    <Property Name="Bagni" Type="int" />
+    <Property Name="Ascensore" Type="nvarchar(max)" />
+    <Property Name="Camere" Type="int" />
+    <Property Name="Locali" Type="int" />
+    <Property Name="Box" Type="nvarchar(max)" />
+    <Property Name="Piano" Type="nvarchar(max)" />
+    <Property Name="ClasseEnergetica" Type="nvarchar(max)" />
+    <Property Name="Descrizione" Type="nvarchar(max)" />
+    <Property Name="DescrizioneBreve" Type="nvarchar(max)" />
+    <Property Name="Contratto" Type="nvarchar(max)" />
+    <Property Name="AnnuncioPubblico" Type="bit" />
+    <Property Name="AnnuncioInEvidenza" Type="bit" />
+    <Property Name="DataInserimento" Type="datetime" />
+    <Property Name="Riscaldamento" Type="nvarchar(max)" />
+    <Property Name="BoxDoppio" Type="nvarchar(max)" />
+    <Property Name="PostoAuto" Type="nvarchar(max)" />
+    <Property Name="MqTerreno" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Provincie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Provincia" Type="nvarchar(max)" />
+    <Property Name="Sigla" Type="nvarchar(max)" />
+    <Property Name="Regione" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Regioni">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Regione" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="modelEntities">
+    <EntitySetMapping Name="Collaborazioni">
+      <EntityTypeMapping TypeName="DBModel.Collaborazioni">
+        <MappingFragment StoreEntitySet="Collaborazioni">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comuni">
+      <EntityTypeMapping TypeName="DBModel.Comuni">
+        <MappingFragment StoreEntitySet="Comuni">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Comune" ColumnName="Comune" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Foto">
+      <EntityTypeMapping TypeName="DBModel.Foto">
+        <MappingFragment StoreEntitySet="Foto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="CodiceImmobile" ColumnName="CodiceImmobile" />
+          <ScalarProperty Name="Copertina" ColumnName="Copertina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Immobili">
+      <EntityTypeMapping TypeName="DBModel.Immobili">
+        <MappingFragment StoreEntitySet="Immobili">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Codice" ColumnName="Codice" />
+          <ScalarProperty Name="Prezzo" ColumnName="Prezzo" />
+          <ScalarProperty Name="Tipologia" ColumnName="Tipologia" />
+          <ScalarProperty Name="Stato" ColumnName="Stato" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Comune" ColumnName="Comune" />
+          <ScalarProperty Name="Zona" ColumnName="Zona" />
+          <ScalarProperty Name="Mq" ColumnName="Mq" />
+          <ScalarProperty Name="Bagni" ColumnName="Bagni" />
+          <ScalarProperty Name="Ascensore" ColumnName="Ascensore" />
+          <ScalarProperty Name="Camere" ColumnName="Camere" />
+          <ScalarProperty Name="Locali" ColumnName="Locali" />
+          <ScalarProperty Name="Box" ColumnName="Box" />
+          <ScalarProperty Name="Piano" ColumnName="Piano" />
+          <ScalarProperty Name="ClasseEnergetica" ColumnName="ClasseEnergetica" />
+          <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+          <ScalarProperty Name="DescrizioneBreve" ColumnName="DescrizioneBreve" />
+          <ScalarProperty Name="Contratto" ColumnName="Contratto" />
+          <ScalarProperty Name="AnnuncioPubblico" ColumnName="AnnuncioPubblico" />
+          <ScalarProperty Name="AnnuncioInEvidenza" ColumnName="AnnuncioInEvidenza" />
+          <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+          <ScalarProperty Name="Riscaldamento" ColumnName="Riscaldamento" />
+          <ScalarProperty Name="BoxDoppio" ColumnName="BoxDoppio" />
+          <ScalarProperty Name="PostoAuto" ColumnName="PostoAuto" />
+          <ScalarProperty Name="MqTerreno" ColumnName="MqTerreno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provincie">
+      <EntityTypeMapping TypeName="DBModel.Provincie">
+        <MappingFragment StoreEntitySet="Provincie">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+          <ScalarProperty Name="Regione" ColumnName="Regione" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regioni">
+      <EntityTypeMapping TypeName="DBModel.Regioni">
+        <MappingFragment StoreEntitySet="Regioni">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Regione" ColumnName="Regione" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

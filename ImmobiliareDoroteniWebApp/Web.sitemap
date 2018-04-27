@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="HomePage" description="">
+    <siteMapNode url="Default.aspx" title="HOME"  description="HOME" />
+    <siteMapNode url="Agenzia.aspx" title="L'AGENZIA"  description="Informazioni dell'agenzia immobiliare" />
+    <siteMapNode url="Immobili.aspx" title="IMMOBILI"  description="Ricera tra i nostri immobili" />
+    <siteMapNode url="NuoveCostruzioni.aspx" title="NUOVE COSTRUZIONI"  description="Le nuove costruzioni che ti proponiamo" />
+    <siteMapNode url="Contatti.aspx" title="CONTATTI"  description="Contatti, orari, richiesta informazioni" />
+  </siteMapNode>
+</siteMap>

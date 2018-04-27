@@ -1,0 +1,226 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="ModificaAnnuncio.aspx.cs" Inherits="ImmobiliareDoroteniWebApp.Admin.ModificaAnnuncio" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderHead" runat="server">
+    <link href="assets/lib/prettify/prettify.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/lib/datepicker/css/datepicker.css">
+    <link rel="stylesheet" href="assets/lib/wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-wysihtml5-hack.css">
+    <link rel="stylesheet" href="assets/lib/jasny/css/jasny-bootstrap.min.css">
+    <link href="assets/lib/uplodify/uploadify.css" rel="stylesheet" type="text/css" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderTitolo" runat="server">
+  <h3>
+        <i class="fa fa-home"></i>&nbsp;Gestione Annunci</h3>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderContenuto" runat="server">
+<div class="row">
+        <div class="col-lg-12">
+            <div class="box dark">
+                <header>
+                    <div class="icons">
+                        <i class="fa fa-edit"></i>
+                    </div>
+                    <h5>
+                        Modifica Annuncio Immobiliare</h5>
+                </header>
+                <div id="div-1" class="row accordion-body collapse in body">
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Codice</label>
+                            <input type="text" class="form-control" id="codice">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Tipologia</label>
+                            <select class="form-control" id="tipologia" name="tipologia" required data-validation-required-message="Campo Obbligatorio">
+                                <option>Appartamento</option>
+                                <option>Casa Indipendente</option>
+                                <option>Negozio</option>
+                                <option>Ufficio</option>
+                                <option>Capannone/Magazzino</option>
+                                <option>Box</option>
+                                <option>Terreno Agricolo</option>
+                                <option>Terreno Edificabile</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Contratto</label>
+                            <select class="form-control" id="contratto" name="contratto" required data-validation-required-message="Campo Obbligatorio">
+                                <option value="-1">Seleziona Tipo Contratto</option>
+                                <option value="1">Affitto</option>
+                                <option value="2">Vendita</option>
+                                <option value="3">Vendita a riscatto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Provincia</label>
+                            <select class="form-control" id="provincia" name="provincia" required data-validation-required-message="Campo Obbligatorio">
+                            </select>
+                             <script id="provinciatmpl" type="text/x-jquery-tmpl">
+                                    <option value="${Sigla}">${Provincia}</option>
+                                 </script>
+                        </div>
+                    </div>
+                     <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Comune</label>
+                            <select class="form-control" id="comune" name="comune" required data-validation-required-message="Campo Obbligatorio">
+                            </select>
+                            <script id="comunetmpl" type="text/x-jquery-tmpl">
+                                <option value="${Id}">${Comune}</option>
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Stato immobile</label>
+                            <select class="form-control" id="stato" name="stato" >
+                                <option value="-1">Seleziona stato </option>
+                                <option value="1">Buono</option>
+                                <option value="2">Ristrutturato</option>
+                                <option value="3">Da Ristrutturare</option>
+                                <option value="4">Nuovo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Zona</label>
+                            <input type="text" class="form-control" id="zona">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Dimensione Mq</label>
+                            <input type="text" class="form-control" id="mq">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Nr.Camere</label>
+                            <input type="text" class="form-control" id="camere">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Nr.Locali</label>
+                            <input type="text" class="form-control" id="locali">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Nr.Bagni</label>
+                            <input type="text" class="form-control" id="bagni">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Piano</label>
+                            <input type="text" class="form-control" id="piano">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Classe Energetica</label>
+                            <input type="text" class="form-control" id="classeenergetica">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Ascensore</label>
+                            <input type="text" class="form-control" id="ascensore">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Box</label>
+                            <input type="text" class="form-control" id="box">
+                        </div>
+                    </div>
+                     <div class="col-lg-6 col-md-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Annuncio Pubblico</label>
+                            <input type="checkbox" class="form-control" id="pubblico">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Prezzo</label>
+                            <input type="text" class="form-control" id="prezzo" required data-validation-required-message="Campo Obbligatorio">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Descrizione Breve</label>
+                            <input type="text" class="form-control" id="descbreve">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="inputEmail">
+                                Descrizione Estesa</label>
+                            <textarea id="wysihtml5" class="form-control" rows="10" required data-validation-required-message="Campo Obbligatorio"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                    <hr />
+                        <div class="form-group">
+                            <label class="control-label col-lg-4">
+                                Carica foto</label>
+                            <input type="file" name="..." id="uploadify1" />
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <div class="form-actions">
+                            <input type="submit" value="Salva Annuncio e foto" id="btnuovoAnnuncio" class="btn btn-primary">
+                            <input type="submit" value="Annulla" id="refreshAnnuncio" class="btn">
+                            <img id="loader" style="display: none;" src="assets/img/ajax-loader.gif" alt="loader" />
+                        </div>
+                    </div>
+                    <div class="successo msg" id="msgdone" style="display: none">
+                        Salvataggio Annuncio e foto concluso con successo!</div>
+                    <input type="hidden" id="listafile" />
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolderJavascript" runat="server">
+    <script src="assets/lib/prettify/prettify.js" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/lib/uplodify/swfobject.js"></script>
+    <script type="text/javascript" src="assets/lib/uplodify/jquery.uploadify.v2.1.4.js"></script>
+    <script type="text/javascript" src="assets/lib/datepicker/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="assets/lib/wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+    <script type="text/javascript" src="assets/lib/bootstrap-wysihtml5-hack.js"></script>
+    <script type="text/javascript" src="assets/lib/jasny/js/jasny-bootstrap.min.js"></script>
+    <script src="assets/lib/jqValidation/jqBootstrapValidation.js" type="text/javascript"></script>
+    <script src="js/GestioneAnnunci.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            CaricaOnLoad();
+        });
+    </script>
+</asp:Content>
+

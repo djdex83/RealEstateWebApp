@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="Collaborazioni" EntityType="DBModel.Store.Collaborazioni" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Comuni" EntityType="DBModel.Store.Comuni" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Foto" EntityType="DBModel.Store.Foto" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Immobili" EntityType="DBModel.Store.Immobili" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Provincie" EntityType="DBModel.Store.Provincie" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Regioni" EntityType="DBModel.Store.Regioni" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+        <EntityType Name="Collaborazioni">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Path" Type="nvarchar(max)" />
+          <Property Name="Descrizione" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Comuni">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Comune" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Provincia" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Foto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descrizione" Type="nvarchar(max)" />
+          <Property Name="Path" Type="nvarchar(max)" />
+          <Property Name="CodiceImmobile" Type="nvarchar(max)" />
+          <Property Name="Copertina" Type="int" />
+        </EntityType>
+        <EntityType Name="Immobili">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Codice" Type="nvarchar(max)" />
+          <Property Name="Prezzo" Type="bigint" />
+          <Property Name="Tipologia" Type="nvarchar(max)" />
+          <Property Name="Stato" Type="nvarchar(max)" />
+          <Property Name="Provincia" Type="nvarchar(max)" />
+          <Property Name="Comune" Type="nvarchar(max)" />
+          <Property Name="Zona" Type="nvarchar(max)" />
+          <Property Name="Mq" Type="int" />
+          <Property Name="Bagni" Type="int" />
+          <Property Name="Ascensore" Type="nvarchar(max)" />
+          <Property Name="Camere" Type="int" />
+          <Property Name="Locali" Type="int" />
+          <Property Name="Box" Type="nvarchar(max)" />
+          <Property Name="Piano" Type="nvarchar(max)" />
+          <Property Name="ClasseEnergetica" Type="nvarchar(max)" />
+          <Property Name="Descrizione" Type="nvarchar(max)" />
+          <Property Name="DescrizioneBreve" Type="nvarchar(max)" />
+          <Property Name="Contratto" Type="nvarchar(max)" />
+          <Property Name="AnnuncioPubblico" Type="bit" />
+          <Property Name="AnnuncioInEvidenza" Type="bit" />
+          <Property Name="DataInserimento" Type="datetime" />
+          <Property Name="Riscaldamento" Type="nvarchar(max)" />
+          <Property Name="BoxDoppio" Type="nvarchar(max)" />
+          <Property Name="PostoAuto" Type="nvarchar(max)" />
+          <Property Name="MqTerreno" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Provincie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Provincia" Type="nvarchar(max)" />
+          <Property Name="Sigla" Type="nvarchar(max)" />
+          <Property Name="Regione" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Regioni">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Regione" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="modelEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="Collaborazioni" EntityType="DBModel.Collaborazioni" />
+          <EntitySet Name="Comuni" EntityType="DBModel.Comuni" />
+          <EntitySet Name="Foto" EntityType="DBModel.Foto" />
+          <EntitySet Name="Immobili" EntityType="DBModel.Immobili" />
+          <EntitySet Name="Provincie" EntityType="DBModel.Provincie" />
+          <EntitySet Name="Regioni" EntityType="DBModel.Regioni" />
+        </EntityContainer>
+        <EntityType Name="Collaborazioni">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Path" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descrizione" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Comuni">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Comune" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Provincia" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Foto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Descrizione" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Path" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CodiceImmobile" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Copertina" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Immobili">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Codice" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Prezzo" Type="Int64" />
+          <Property Name="Tipologia" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Stato" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Provincia" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Comune" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Zona" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Mq" Type="Int32" />
+          <Property Name="Bagni" Type="Int32" />
+          <Property Name="Ascensore" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Camere" Type="Int32" />
+          <Property Name="Locali" Type="Int32" />
+          <Property Name="Box" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Piano" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ClasseEnergetica" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descrizione" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DescrizioneBreve" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Contratto" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="AnnuncioPubblico" Type="Boolean" />
+          <Property Name="AnnuncioInEvidenza" Type="Boolean" />
+          <Property Name="DataInserimento" Type="DateTime" />
+          <Property Name="Riscaldamento" Type="String"  MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="BoxDoppio" Type="String" Nullable="true" FixedLength="false" MaxLength="Max" Unicode="true" />
+          <Property Name="PostoAuto" Type="String" Nullable="true" FixedLength="false" MaxLength="Max" Unicode="true" />
+          <Property Name="MqTerreno" Type="String" Nullable="true" FixedLength="false" MaxLength="Max" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Provincie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Provincia" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Sigla" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Regione" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Regioni">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Regione" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="modelEntities">
+          <EntitySetMapping Name="Collaborazioni">
+            <EntityTypeMapping TypeName="DBModel.Collaborazioni">
+              <MappingFragment StoreEntitySet="Collaborazioni">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comuni">
+            <EntityTypeMapping TypeName="DBModel.Comuni">
+              <MappingFragment StoreEntitySet="Comuni">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Comune" ColumnName="Comune" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Foto">
+            <EntityTypeMapping TypeName="DBModel.Foto">
+              <MappingFragment StoreEntitySet="Foto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="CodiceImmobile" ColumnName="CodiceImmobile" />
+                <ScalarProperty Name="Copertina" ColumnName="Copertina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Immobili">
+            <EntityTypeMapping TypeName="DBModel.Immobili">
+              <MappingFragment StoreEntitySet="Immobili">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Codice" ColumnName="Codice" />
+                <ScalarProperty Name="Prezzo" ColumnName="Prezzo" />
+                <ScalarProperty Name="Tipologia" ColumnName="Tipologia" />
+                <ScalarProperty Name="Stato" ColumnName="Stato" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Comune" ColumnName="Comune" />
+                <ScalarProperty Name="Zona" ColumnName="Zona" />
+                <ScalarProperty Name="Mq" ColumnName="Mq" />
+                <ScalarProperty Name="Bagni" ColumnName="Bagni" />
+                <ScalarProperty Name="Ascensore" ColumnName="Ascensore" />
+                <ScalarProperty Name="Camere" ColumnName="Camere" />
+                <ScalarProperty Name="Locali" ColumnName="Locali" />
+                <ScalarProperty Name="Box" ColumnName="Box" />
+                <ScalarProperty Name="Piano" ColumnName="Piano" />
+                <ScalarProperty Name="ClasseEnergetica" ColumnName="ClasseEnergetica" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="DescrizioneBreve" ColumnName="DescrizioneBreve" />
+                <ScalarProperty Name="Contratto" ColumnName="Contratto" />
+                <ScalarProperty Name="AnnuncioPubblico" ColumnName="AnnuncioPubblico" />
+                <ScalarProperty Name="AnnuncioInEvidenza" ColumnName="AnnuncioInEvidenza" />
+                <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+                <ScalarProperty Name="Riscaldamento" ColumnName="Riscaldamento" />
+                <ScalarProperty Name="BoxDoppio" ColumnName="BoxDoppio" />
+                <ScalarProperty Name="PostoAuto" ColumnName="PostoAuto" />
+                <ScalarProperty Name="MqTerreno" ColumnName="MqTerreno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincie">
+            <EntityTypeMapping TypeName="DBModel.Provincie">
+              <MappingFragment StoreEntitySet="Provincie">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+                <ScalarProperty Name="Regione" ColumnName="Regione" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regioni">
+            <EntityTypeMapping TypeName="DBModel.Regioni">
+              <MappingFragment StoreEntitySet="Regioni">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Regione" ColumnName="Regione" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="EntityModelDB" ZoomLevel="106">
+        <EntityTypeShape EntityType="DBModel.Collaborazioni" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Comuni" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Foto" Width="1.5" PointX="0.75" PointY="3.75" Height="1.9802864583333322" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Immobili" Width="1.5" PointX="8.125" PointY="2.5" Height="5.4417122395833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Provincie" Width="1.5" PointX="4.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Regioni" Width="1.5" PointX="4.75" PointY="3.75" Height="1.4033821614583322" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

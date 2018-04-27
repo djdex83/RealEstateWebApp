@@ -1,0 +1,7 @@
+C:\Users\Marco De Santis\Desktop\ImmobiliareDoroteni2018\ImmobiliareDoroteniBackEnd\bin\ImmobiliareDoroteniBackEnd.dll.config
+C:\Users\Marco De Santis\Desktop\ImmobiliareDoroteni2018\ImmobiliareDoroteniBackEnd\bin\ImmobiliareDoroteniBackEnd.dll
+C:\Users\Marco De Santis\Desktop\ImmobiliareDoroteni2018\ImmobiliareDoroteniBackEnd\bin\ImmobiliareDoroteniBackEnd.pdb
+C:\Users\Marco De Santis\Desktop\ImmobiliareDoroteni2018\ImmobiliareDoroteniBackEnd\obj\Debug\ImmobiliareDoroteniBackEnd.csprojResolveAssemblyReference.cache
+C:\Users\Marco De Santis\Desktop\ImmobiliareDoroteni2018\ImmobiliareDoroteniBackEnd\obj\Debug\ImmobiliareDoroteniBackEnd.csproj.CoreCompileInputs.cache
+C:\Users\Marco De Santis\Desktop\ImmobiliareDoroteni2018\ImmobiliareDoroteniBackEnd\obj\Debug\ImmobiliareDoroteniBackEnd.dll
+C:\Users\Marco De Santis\Desktop\ImmobiliareDoroteni2018\ImmobiliareDoroteniBackEnd\obj\Debug\ImmobiliareDoroteniBackEnd.pdb

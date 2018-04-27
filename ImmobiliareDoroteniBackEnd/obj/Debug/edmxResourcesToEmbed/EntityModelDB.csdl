@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="modelEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="Collaborazioni" EntityType="DBModel.Collaborazioni" />
+    <EntitySet Name="Comuni" EntityType="DBModel.Comuni" />
+    <EntitySet Name="Foto" EntityType="DBModel.Foto" />
+    <EntitySet Name="Immobili" EntityType="DBModel.Immobili" />
+    <EntitySet Name="Provincie" EntityType="DBModel.Provincie" />
+    <EntitySet Name="Regioni" EntityType="DBModel.Regioni" />
+  </EntityContainer>
+  <EntityType Name="Collaborazioni">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Path" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Descrizione" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Comuni">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Comune" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Provincia" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Foto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Descrizione" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Path" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CodiceImmobile" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Copertina" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Immobili">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Codice" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Prezzo" Type="Int64" />
+    <Property Name="Tipologia" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Stato" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Provincia" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Comune" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Zona" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Mq" Type="Int32" />
+    <Property Name="Bagni" Type="Int32" />
+    <Property Name="Ascensore" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Camere" Type="Int32" />
+    <Property Name="Locali" Type="Int32" />
+    <Property Name="Box" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Piano" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ClasseEnergetica" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Descrizione" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DescrizioneBreve" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Contratto" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="AnnuncioPubblico" Type="Boolean" />
+    <Property Name="AnnuncioInEvidenza" Type="Boolean" />
+    <Property Name="DataInserimento" Type="DateTime" />
+    <Property Name="Riscaldamento" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="BoxDoppio" Type="String" Nullable="true" FixedLength="false" MaxLength="Max" Unicode="true" />
+    <Property Name="PostoAuto" Type="String" Nullable="true" FixedLength="false" MaxLength="Max" Unicode="true" />
+    <Property Name="MqTerreno" Type="String" Nullable="true" FixedLength="false" MaxLength="Max" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Provincie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Provincia" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Sigla" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Regione" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Regioni">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Regione" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>
